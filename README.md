@@ -1,0 +1,1 @@
+# gox-delete-user
