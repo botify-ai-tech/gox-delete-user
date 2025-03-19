@@ -1,0 +1,197 @@
+@import "./breakpoint.scss";
+@import "./theme.scss";
+@import "./container.scss";
+@import "./mixin.scss";
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Lato";
+  font-style: normal;
+}
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+  @include breakpoint("max-sm") {
+    width: 6px;
+    height: 6px;
+  }
+}
+::-webkit-scrollbar-track {
+  background-color: var(--color1);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color2);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color3);
+}
+::selection {
+  background: var(--color2);
+  color: var(--white);
+}
+:focus::placeholder {
+  opacity: 0;
+}
+::placeholder {
+  opacity: 1;
+  transition: opacity 0.4s;
+}
+body {
+  font-family: "Lato";
+  font-style: normal;
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
+  line-height: 1.5;
+  font-weight: 400;
+  color: var(--white);
+  background-color: var(--body);
+  overflow-x: hidden;
+}
+a,
+span,
+a:hover,
+a:active,
+button,
+label,
+input {
+  text-decoration: none;
+  outline: none;
+  border: unset;
+  background-color: unset;
+  color: unset;
+  display: inline-block;
+  cursor: pointer;
+}
+input,
+span {
+  cursor: initial;
+}
+a,
+div a:hover,
+div a:active,
+div a:focus,
+button {
+  text-decoration: none;
+  @include transition();
+}
+body h1,
+body h2,
+body h3,
+body h4,
+body h5,
+body h6,
+p {
+  margin: 0;
+}
+ul,
+li,
+ol {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+img {
+  max-width: 100%;
+  display: inline-block;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  text-indent: 1px;
+  text-overflow: "";
+}
+.cm_overflow {
+  overflow: hidden;
+}
+.Myapp {
+  width: 100%;
+  min-height: 100vh;
+  .main_wrapper {
+    width: 100%;
+  }
+}
+
+.Home_Page {
+  width: 100%;
+  padding: 100px 0;
+  .input_wrapper_avtar {
+    width: 100%;
+    margin-bottom: 30px;
+    position: relative;
+    @include breakpoint("max-xs") {
+      margin-bottom: 25px;
+    }
+    .label {
+      display: block;
+      color: var(--white);
+      font-weight: 800;
+      font-size: 18px;
+      text-align: left;
+      line-height: 1.3;
+      text-transform: capitalize;
+      margin-bottom: 15px;
+      letter-spacing: 1px;
+      @include breakpoint("max-xs") {
+        font-size: 16px;
+        margin-bottom: 10px;
+        font-weight: 700;
+      }
+    }
+    .input_avtar {
+      display: block;
+      color: var(--white);
+      font-weight: 600;
+      width: 100%;
+      letter-spacing: 1px;
+      font-size: 16px;
+      overflow: hidden;
+      border-radius: 10px;
+      line-height: 1;
+      padding: 15px;
+      background-color: #ffffff0d;
+      outline: 3px solid var(--color2);
+      @include transition();
+      @include breakpoint("max-xs") {
+        outline: 2px solid var(--color2);
+        padding: 12px;
+        border-radius: 8px;
+        font-weight: 500;
+        font-size: 15px;
+      }
+      &:hover,
+      &:focus {
+        outline: 3px solid var(--white);
+        @include breakpoint("max-xs") {
+          outline: 2px solid var(--white);
+        }
+      }
+      &::placeholder {
+        color: var(--color2);
+      }
+    }
+    textarea {
+      min-height: 500px;
+      line-height: 1.5 !important;
+      resize: vertical;
+      @include breakpoint("max-xs") {
+        min-height: 400px;
+      }
+    }
+    select {
+      text-transform: capitalize;
+      &:focus {
+        color: var(--color2);
+      }
+    }
+  }
+  .btn_wrapper {
+    @include AnimeBtn();
+  }
+}

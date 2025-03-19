@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://avtars.ai/
+
+# Sitemaps
+Sitemap: https://avtars.ai/sitemap.xml
